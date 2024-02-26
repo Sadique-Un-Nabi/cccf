@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+	<h2>You Have Been Logged Out</h2>
+	<div class="border-top pt-3">
+		<small class="text-nuted">
+			<a class="btn btn-primary" href={% url 'login' %}>Login</a>
+		</small>
+	</div>
+{% endblock content %}

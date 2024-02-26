@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+  <header class="bg-primary text-white text-center py-4">
+    <h1>User Profile</h1>
+  </header>
+
+  <div class="container mt-4">
+    <div class="row align-items-center">
+      <div class="col-lg-4">
+        <div class="text-center">
+          <img src="{{ user.profile.image.url }}" alt="Profile Picture" class="img-fluid rounded-circle" style="max-width: 200px;">
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <section>
+          <h2>User Information</h2>
+          <ul class="list-group">
+            <li class="list-group-item"><strong>Username:</strong> {{ user.username }}</li>
+            <li class="list-group-item"><strong>Email:</strong> {{ user.email }}</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Additional Profile Information</h2>
+          <ul class="list-group">
+            <li class="list-group-item"><strong>Full Name:</strong> {{ user.profile.full_name }}</li>
+            <li class="list-group-item"><strong>Gender:</strong> {% if user.profile.gender == "M" %}Male{% else %}Female{% endif %}</li>
+            <li class="list-group-item"><strong>Date of Birth:</strong> {{ user.profile.date_of_birth }}</li>
+            <li class="list-group-item"><strong>Cadet Name:</strong> {{ user.profile.cadet_name }}</li>
+            <li class="list-group-item"><strong>Intake:</strong> {{ user.profile.intake }}</li>
+            <li class="list-group-item"><strong>Admission Year:</strong> {% if user.profile.admission_year %}{{ user.profile.admission_year }}{% else %}-{% endif %}</li>
+            <li class="list-group-item"><strong>College Name:</strong> {{ user.profile.college_name }}</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

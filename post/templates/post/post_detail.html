@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="card">
+      <div class="card-body">
+        <h2>{{ object.title }}</h2>
+        <p class="text-muted">Posted by {{ object.author }} on {{ object.date_created }}</p>
+        <p>{{ object.content }}</p>
+      </div>
+    </div>
+{% endblock content %}
